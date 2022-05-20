@@ -15,23 +15,22 @@ public class AnimationStateController : MonoBehaviour
         isDeadHash = Animator.StringToHash("isDead");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        bool isRunning = Input.GetKey("w");
-        bool isDead = Input.GetKey("s");
+    //void Update()
+    //{
+    //    bool isRunning = Input.GetMouseButton(0);
+    //    bool isDead = Input.GetMouseButtonDown(1);
 
-        if (isRunning)
-        {
-            animator.SetBool(isRunningHash, true);
-        }
-        else if(!isRunning)
-        {
-            animator.SetBool(isRunningHash, false);
-        }
-        if (isDead)
-        {
-            animator.SetBool(isDeadHash, true);
-        }
-    }
+    //    if (isRunning)
+    //    {
+    //        animator.SetBool(isRunningHash, true);
+    //    }
+    //    else if(!isRunning)
+    //    {
+    //        animator.SetBool(isRunningHash, false);
+    //    }
+    //    if (isDead)
+    //    {
+    //        animator.SetBool(isDeadHash, true);
+    //    }
+    //}
 }
