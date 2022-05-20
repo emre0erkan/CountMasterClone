@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3755663643914177723}
   - component: {fileID: 4574966325615675223}
+  - component: {fileID: 7451462705286006085}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Tower
@@ -47,6 +48,19 @@ CapsuleCollider:
   m_Height: 18.314781
   m_Direction: 1
   m_Center: {x: 0, y: -0.36264992, z: -0.042678833}
+--- !u!114 &7451462705286006085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991989527603632983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa195131a2e20544a69412ef4b755db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: 5
 --- !u!1 &2321836410118198490
 GameObject:
   m_ObjectHideFlags: 0

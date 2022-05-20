@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Gates : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class Gates : MonoBehaviour
     [SerializeField] Text gateText;
     public float stickmanAmountToSpawn;
 
+    private void Start()
+    {
+        
+    }
     public float SpawnAmount(float stickmanAmount)
     {
         if (operationType == Operation.addition)

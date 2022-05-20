@@ -131,6 +131,7 @@ MonoBehaviour:
   operationType: 0
   value: 0
   gateText: {fileID: 0}
+  stickmanAmountToSpawn: 0
 --- !u!65 &5567326647490594513
 BoxCollider:
   m_ObjectHideFlags: 0

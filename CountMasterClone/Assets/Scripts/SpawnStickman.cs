@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnStickman : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class SpawnStickman : MonoBehaviour
     Gates gates;
 
     public float stickmanAmountToSpawn;
+    public Text stickmanCountText;
     [SerializeField] private float baseAngle = 90;
 
     
@@ -45,9 +47,11 @@ public class SpawnStickman : MonoBehaviour
     {
         GameObject stickman = Instantiate(Stickman);
         GameManager.Instance.stickmanList.Add(stickman);
+        GameManager.Instance.currentStickmanAmount = GameManager.Instance.stickmanList.Count;
         stickman.transform.parent = gameObject.transform;
         stickman.transform.localPosition = new Vector3(Random.Range(-3f, 3f), 1, Random.Range(-4f, 4));
         stickman.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        stickmanCountText.text = GameManager.Instance.currentStickmanAmount.ToString();
         Debug.Log(GameManager.Instance.stickmanList.Count);
     }
 

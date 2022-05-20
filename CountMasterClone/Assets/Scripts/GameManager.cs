@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public float currentStickmanAmount = 2;
     public List<GameObject> stickmanList = new List<GameObject>();
 
+    public SpawnStickman spawnStickman;
+
 
     public static GameManager Instance
     {
