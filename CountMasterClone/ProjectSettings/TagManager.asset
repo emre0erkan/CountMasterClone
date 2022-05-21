@@ -13,6 +13,9 @@ TagManager:
   - TowerRange
   - Arrow
   - TowerArea
+  - Ramp
+  - Arm
+  - Boss
   layers:
   - Default
   - TransparentFX

@@ -15,7 +15,7 @@ public class Tower : MonoBehaviour
             if (towerHP == 1) 
             { 
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

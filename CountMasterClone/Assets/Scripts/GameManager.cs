@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         startMenu.SetActive(false);
-        movement.GetComponent<Movement>().forwardMove = new Vector3(0f, 0f, 0.1f);
+        movement.GetComponent<Movement>().forwardMove = new Vector3(0f, 0f, 0.2f);
     }
 
     public void StickmanCount()
