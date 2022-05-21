@@ -8,6 +8,10 @@ TagManager:
   - Obstacle
   - Tower
   - Stickman
+  - EnemyStickman
+  - EnemyTeam
+  - TowerRange
+  - Arrow
   layers:
   - Default
   - TransparentFX

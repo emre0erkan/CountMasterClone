@@ -9,12 +9,35 @@ public class TriggerControl : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
-            Debug.Log("obstacle triggered");
+            GameManager.Instance.stickmanList.Remove(gameObject);
             Destroy(gameObject);
-            GameManager.Instance.stickmanList.RemoveAt(GameManager.Instance.stickmanList.Count - 1);
-            GameManager.Instance.currentStickmanAmount = GameManager.Instance.stickmanList.Count;
-            GameManager.Instance.spawnStickman.stickmanCountText.text = GameManager.Instance.stickmanList.Count.ToString();
-            Debug.Log(GameManager.Instance.stickmanList.Count);
+            //GameManager.Instance.StickmanCount();
+        }
+        else if (other.gameObject.tag == "EnemyStickman")
+        {
+            Debug.Log("Enemy triggered");
+            GameManager.Instance.stickmanList.Remove(gameObject);
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+            //GameManager.Instance.StickmanCount();
+
+        }
+        else if (other.gameObject.tag == "Arrow")
+        {
+            GameManager.Instance.stickmanList.Remove(gameObject);
+            Destroy(gameObject);
+            Destroy(other.gameObject);     
+            GameManager.Instance.StickmanCount();   
+        }
+        else if (other.gameObject.tag == "Tower")
+        {
+            Debug.Log("Tower triggered");
+            GameManager.Instance.stickmanList.Remove(gameObject);
+            Destroy(gameObject);
+            other.gameObject.GetComponent<Tower>().towerHP--;
+            Debug.Log("tower hp " + other.gameObject.GetComponent<Tower>().towerHP);
+            GameManager.Instance.StickmanCount();
         }
     }
+
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class SpawnStickman : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class SpawnStickman : MonoBehaviour
 
     private void Update()
     {
-        StickmanArranger();
+        
     }
 
     public void StickmanSpawn()
@@ -41,6 +42,7 @@ public class SpawnStickman : MonoBehaviour
             Spawn();
             Debug.Log("kaç kere" + stickmanAmountToSpawn);
         }
+        StickmanArranger();
     }
 
     public void Spawn()
@@ -49,10 +51,10 @@ public class SpawnStickman : MonoBehaviour
         GameManager.Instance.stickmanList.Add(stickman);
         GameManager.Instance.currentStickmanAmount = GameManager.Instance.stickmanList.Count;
         stickman.transform.parent = gameObject.transform;
-        stickman.transform.localPosition = new Vector3(Random.Range(-3f, 3f), 1, Random.Range(-4f, 4));
+        stickman.transform.localPosition = new Vector3(Random.Range(-3f, 3f), 0, Random.Range(-4f, 4));
         stickman.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         stickmanCountText.text = GameManager.Instance.currentStickmanAmount.ToString();
-        Debug.Log(GameManager.Instance.stickmanList.Count);
+        
     }
 
     private void StickmanArranger()
@@ -67,7 +69,8 @@ public class SpawnStickman : MonoBehaviour
             float z = radiusFactor * Mathf.Sqrt(i + 1) * Mathf.Sin(angleFactor * baseAngleRad * (i + 1));
 
             Vector3 runnerLocalPosition = new Vector3(x, transform.GetChild(i).localPosition.y, z);
-            transform.GetChild(i).localPosition = Vector3.Lerp(transform.GetChild(i).localPosition, runnerLocalPosition, 0.1f);
+            //transform.GetChild(i).localPosition = Vector3.Lerp(transform.GetChild(i).localPosition, runnerLocalPosition, 0.1f);
+            transform.GetChild(i).DOLocalMove(runnerLocalPosition, 0.2f);
 
         }
 
