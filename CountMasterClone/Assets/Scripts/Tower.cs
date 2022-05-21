@@ -6,14 +6,17 @@ using DG.Tweening;
 public class Tower : MonoBehaviour
 {
     public int towerHP;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Stickman")
         {
             towerHP--;
-            Debug.Log(towerHP);
-            if (towerHP == 0)
+            if (towerHP == 1) 
+            { 
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 Destroy(gameObject);
+            }
         }
     }
 }

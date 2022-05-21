@@ -30,11 +30,6 @@ public class SpawnStickman : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void StickmanSpawn()
     {
         for (int i = 0; i < stickmanAmountToSpawn; i++)
@@ -51,7 +46,7 @@ public class SpawnStickman : MonoBehaviour
         GameManager.Instance.stickmanList.Add(stickman);
         GameManager.Instance.currentStickmanAmount = GameManager.Instance.stickmanList.Count;
         stickman.transform.parent = gameObject.transform;
-        stickman.transform.localPosition = new Vector3(Random.Range(-3f, 3f), 0, Random.Range(-4f, 4));
+        stickman.transform.localPosition = new Vector3(Random.Range(-3f, 3f), 1, Random.Range(-4f, 4));
         stickman.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         stickmanCountText.text = GameManager.Instance.currentStickmanAmount.ToString();
         

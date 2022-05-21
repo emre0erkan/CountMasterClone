@@ -16,8 +16,6 @@ public class GateControl : MonoBehaviour
                 stickmanAmountToSpawn = other.gameObject.GetComponent<Gates>().SpawnAmount(GameManager.Instance.currentStickmanAmount);
                 gameObject.GetComponent<SpawnStickman>().stickmanAmountToSpawn = stickmanAmountToSpawn;
                 gameObject.GetComponent<SpawnStickman>().StickmanSpawn();
-                Debug.Log("doðacak " + stickmanAmountToSpawn);
-                Debug.Log("triggered");
                 passedGateOnce = true;
                 StartCoroutine(ActivateGate());
             }

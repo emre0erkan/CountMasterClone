@@ -12,6 +12,7 @@ TagManager:
   - EnemyTeam
   - TowerRange
   - Arrow
+  - TowerArea
   layers:
   - Default
   - TransparentFX

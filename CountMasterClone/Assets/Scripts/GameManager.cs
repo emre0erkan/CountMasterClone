@@ -34,14 +34,10 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    private void Update()
-    {
-        StickmanCount();
-    }
     public void StartGame()
     {
         startMenu.SetActive(false);
-        movement.GetComponent<Movement>().forwardMove = new Vector3(0f, 0f, 0.2f);
+        movement.GetComponent<Movement>().forwardMove = new Vector3(0f, 0f, 0.1f);
     }
 
     public void StickmanCount()
