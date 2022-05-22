@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 718981266546678547}
   - component: {fileID: 718981266546678552}
   - component: {fileID: 5104152019857782362}
-  - component: {fileID: 534783392875747420}
+  - component: {fileID: 1363197175524159961}
   m_Layer: 0
   m_Name: EnemyTeam
   m_TagString: EnemyTeam
@@ -64,14 +64,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c0646aa3e1769478cae4624cce5e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusFactor: 0
-  angleFactor: 0
   enemyPrefab: {fileID: 100782329109227786, guid: be753ff58782c214b9ffc1c3978eb19f, type: 3}
   enemyCount: 0
   enemyCountText: {fileID: 718981268146152223}
   baseAngle: 90
---- !u!135 &534783392875747420
-SphereCollider:
+--- !u!136 &1363197175524159961
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -80,9 +78,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 7.64
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 9.162926
+  m_Height: 34.12
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 1.3473129}
 --- !u!1 &718981267068901098
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,12 +172,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718981267068901098}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.38632214
+  m_Height: 75000.016
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.00000006357829, y: 0, z: -0.11367811}
 --- !u!1 &718981267290710526
 GameObject:
   m_ObjectHideFlags: 0

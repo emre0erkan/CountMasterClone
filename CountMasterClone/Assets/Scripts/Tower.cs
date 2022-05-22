@@ -19,7 +19,7 @@ public class Tower : MonoBehaviour
         {
             towerHP--;
             towerText.text = towerHP.ToString();
-            if (towerHP == 1) 
+            if (towerHP == 0) 
             { 
                 Destroy(gameObject);
             }

@@ -6,10 +6,8 @@ using DG.Tweening;
 
 public class EnemyTeamController : MonoBehaviour
 {
-    [Range(0f, 1f)]
-    [SerializeField] private float radiusFactor;
-    [Range(0f, 1f)]
-    [SerializeField] private float angleFactor;
+    private float radiusFactor = 0.4f;
+    private float angleFactor = 0.627f;
 
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] float enemyCount;
@@ -24,9 +22,18 @@ public class EnemyTeamController : MonoBehaviour
         {
             SpawnEnemy();
         }
-
         EnemyArrenger();
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Stickman")
+    //    {
+    //            gameObject.transform.GetChild(3).transform.DOMove(new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y,
+    //                other.gameObject.transform.position.z), 0.4f);
+
+    //    }
+    //}
 
     public void SpawnEnemy()
     {

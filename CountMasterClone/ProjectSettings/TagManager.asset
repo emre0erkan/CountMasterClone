@@ -16,6 +16,8 @@ TagManager:
   - Ramp
   - Arm
   - Boss
+  - BonusGate
+  - BehindBoss
   layers:
   - Default
   - TransparentFX

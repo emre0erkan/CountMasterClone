@@ -46,7 +46,7 @@ public class SpawnStickman : MonoBehaviour
         GameManager.Instance.stickmanList.Add(stickman);
         GameManager.Instance.currentStickmanAmount = GameManager.Instance.stickmanList.Count;
         stickman.transform.parent = gameObject.transform;
-        stickman.transform.localPosition = Vector3.zero;
+        stickman.transform.localPosition = new Vector3(0f,1f,0f);
         stickman.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         stickmanCountText.text = GameManager.Instance.currentStickmanAmount.ToString();
         stickman.GetComponent<TriggerControl>().SetPlayer(GetComponent<Movement>());

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GateControl : MonoBehaviour
 {
     public float stickmanAmountToSpawn;
-    public bool passedGateOnce = false;
+    private bool passedGateOnce = false;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Gate")

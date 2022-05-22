@@ -10,28 +10,17 @@ public class Archer : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-
-
-            StartCoroutine(ShootArrows());
+            ShootArrows();
             if (gameObject.transform.childCount >= 1)
                 gameObject.transform.GetChild(0).DOMove(new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y - 3, other.gameObject.transform.position.z), 1.5f);
-
-
 
         }
     }
 
-    //public void ShootArrows()
-    //{
-    //    GameObject arrow = Instantiate(arrowPrefab, transform.position, transform.rotation);
-    //    arrow.transform.parent = gameObject.transform;
-
-    //}
-
-    IEnumerator ShootArrows()
+    public void ShootArrows()
     {
-        yield return new WaitForSeconds(1f);
         GameObject arrow = Instantiate(arrowPrefab, transform.position, transform.rotation);
         arrow.transform.parent = gameObject.transform;
+
     }
 }
