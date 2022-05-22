@@ -14,17 +14,34 @@ public class TriggerControl : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
+
         if (other.gameObject.tag == "TowerArea")
         {
             Debug.Log("Tower area triggered");
-            player.forwardMove = new Vector3(0f, 0f, 0f);
-            gameObject.transform.DOMove(new Vector3(other.gameObject.transform.GetChild(0).position.x, gameObject.transform.position.y, gameObject.transform.position.z), 1f);
+            player.forwardMove = new Vector3(0f, 0f, 0.05f);
+            gameObject.transform.DOMove(new Vector3(other.gameObject.transform.GetChild(0).position.x, gameObject.transform.position.y, other.gameObject.transform.GetChild(0).position.z), 1f);
+            if(other.gameObject.GetComponent<Tower>().towerHP <= 1)
+                player.forwardMove = new Vector3(0f, 0f, 0.2f);
         }
         else if (other.gameObject.tag == "Boss")
         {
             Debug.Log("Boss area triggered");
-            player.forwardMove = Vector3.zero;
-            gameObject.transform.DOMove(new Vector3(other.gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), 1f);
+            player.forwardMove = new Vector3(0f, 0f, 0.05f);
+            //gameObject.transform.DOMove(new Vector3(other.gameObject.transform.position.x, gameObject.transform.position.y, other.gameObject.transform.GetChild(0).position.z), 1f);
+        }
+        else if (other.gameObject.tag == "EnemyTeam")
+        {
+            Debug.Log("EnemyTeam triggered");
+            player.forwardMove = new Vector3(0f, 0f, 0.05f);
+            //gameObject.transform.DOMove(new Vector3(other.gameObject.transform.position.x, gameObject.transform.position.y, other.gameObject.transform.GetChild(0).position.z), 1f);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "TowerArea")
+        {
+            player.forwardMove = new Vector3(0f, 0f, 0.2f);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -65,9 +82,14 @@ public class TriggerControl : MonoBehaviour
         }
         else if (other.gameObject.tag == "Arm")
         {
+            Debug.Log("Arm triggered");
             GameManager.Instance.stickmanList.Remove(gameObject);
             Destroy(gameObject);
             GameManager.Instance.StickmanCount();
+        }
+        else if(other.gameObject.tag == "Finish")
+        {
+            GameManager.Instance.LoadNextScene();
         }
     }
 

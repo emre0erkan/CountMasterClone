@@ -14,19 +14,6 @@ public class Movement : MonoBehaviour
         forwardMove = new Vector3(0f, 0f, 0f);
     }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (other.gameObject.tag == "TowerArea")
-    //    {
-    //        Debug.Log("Main Tower area triggered");
-    //        forwardMove = new Vector3(0f, 0f, 0f);
-    //    }
-    //    else if (other.gameObject.tag == "Boss")
-    //    {
-    //        Debug.Log("Main Boss area triggered");
-    //        forwardMove = new Vector3(0f, 0f, 0f);
-    //    }
-    //}
     void Update()
     {
         transform.position = transform.position + forwardMove;

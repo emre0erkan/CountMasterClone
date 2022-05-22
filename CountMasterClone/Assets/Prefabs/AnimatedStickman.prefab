@@ -1259,7 +1259,7 @@ GameObject:
   - component: {fileID: 3588755719046861700}
   - component: {fileID: 7944903334992656869}
   m_Layer: 0
-  m_Name: Stickman
+  m_Name: AnimatedStickman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -26,8 +26,7 @@ public class SpawnStickman : MonoBehaviour
         for (int i = 0; i < GameManager.Instance.startingStickmanAmount; i++)
         {
             Spawn();
-        }
-        
+        } 
     }
 
     public void StickmanSpawn()
@@ -47,7 +46,7 @@ public class SpawnStickman : MonoBehaviour
         GameManager.Instance.stickmanList.Add(stickman);
         GameManager.Instance.currentStickmanAmount = GameManager.Instance.stickmanList.Count;
         stickman.transform.parent = gameObject.transform;
-        stickman.transform.localPosition = new Vector3(Random.Range(-3f, 3f), 1, Random.Range(-4f, 4));
+        stickman.transform.localPosition = Vector3.zero;
         stickman.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         stickmanCountText.text = GameManager.Instance.currentStickmanAmount.ToString();
         stickman.GetComponent<TriggerControl>().SetPlayer(GetComponent<Movement>());
@@ -68,7 +67,6 @@ public class SpawnStickman : MonoBehaviour
             Vector3 runnerLocalPosition = new Vector3(x, transform.GetChild(i).localPosition.y, z);
             //transform.GetChild(i).localPosition = Vector3.Lerp(transform.GetChild(i).localPosition, runnerLocalPosition, 0.1f);
             transform.GetChild(i).DOLocalMove(runnerLocalPosition, 0.2f);
-
         }
 
     }
